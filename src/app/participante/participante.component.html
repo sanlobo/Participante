@@ -1,0 +1,86 @@
+
+<div class="row">
+   <form class="col s10" #formParti="ngForm" novalidate>
+    
+     <div class="row">
+
+        <div class="input-field col s5">
+            <i class="material-icons prefix">supervisor_account</i>
+            <input  id="nombre" 
+                    type="text" 
+                    class="validate"
+                    [class.invalid]="!nombreTxt.valid"
+                    name="nombre"
+                    #nombreTxt="ngModel"
+                    [(ngModel)]="participanteACrear.nombre"
+                    required>
+
+            <label  for="nombre"                    
+                    data-error="El nombre es requerido" 
+                    data-success="continuar">Nombre</label>            
+        </div>
+
+        <div class="input-field col s5">
+            <i class="material-icons prefix">supervisor_account</i>
+            <input  id="apellido" 
+                    type="text" 
+                    class="validate"
+                    [class.invalid]="!apellidoTxt.valid"
+                    name="apellido"
+                    #apellidoTxt="ngModel"
+                    [(ngModel)]="participanteACrear.apellido"
+                    required>
+
+            <label  for="apellido"                    
+                    data-error="El apellido es requerido" 
+                    data-success="Ok">Apellido</label>     
+        </div>    
+     </div>
+     <div class="row">
+        <div class="input-field col s5">
+            <i class="material-icons prefix">assignment_ind</i>
+            <input  id="cedula" 
+                    type="text" 
+                    class="validate"
+                    [class.invalid]="!cedulaTxt.valid"
+                    name="cedula"
+                    #cedulaTxt="ngModel"
+                    [(ngModel)]="participanteACrear.cedula"
+                    required>
+
+            <label  for="cedula"                    
+                    data-error="La cedula es requerida" 
+                    data-success="Ok">Cedula</label>            
+        </div>
+
+
+        <div class="input-field col s5">
+            <i class="material-icons prefix">done</i>
+            <input id="codigo" 
+            type="text" 
+            class="validate"
+            [class.invalid]="!posicionTxt.valid"
+              name="codigo"
+             #posicionTxt="ngModel"
+            [(ngModel)]="participanteACrear.posicion"
+            required>
+            <label for="posicion" 
+            data-error="El codigo es requerido" 
+            data-success="valkido">codigo</label>
+        </div>             
+     </div>
+     <div class="row">
+        <div class="col s10">
+          <br/>
+          <button class="btn waves-effect waves-light" 
+                  type="submit" 
+                  name="action"
+                  [disabled]="!participanteACrear.valid"
+                  (click)="Guardarpar()">
+             Guardar
+            <i class="material-icons right">send</i>            
+          </button>
+        </div>
+     </div>          
+    </form>  
+</div>

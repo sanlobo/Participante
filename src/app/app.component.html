@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav>
+    <div class="nav-wrapper #ffe082 amber lighten-3">
+      <a href="#!" class="brand-logo"><i class="material-icons">perm_identity</i>PARTICIPANTE</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons left">cloud</i></a>
+      <ul class="right hide-on-med-and-down">
+         <li (click)="listarparticipantes()"><a class="waves-effect waves-light btn">MOSTRAR TODOS LOS PARTICIPANTES
+          </a></li>
+      </ul>
+    </div>
+  </nav>
+          
+
+<ul class="collection with-header" id="listarparticipante" *ngFor="let participante of participantelist">
+        <li class="collection-header"><h4>NOMBRE JUGADOR: {{participante.nombre}}  {{participante.apellido}}</h4></li>
+        <li class="collection-item">
+          Cedula: {{participante.cedula}}<br>
+          Posicion: {{participante.codigo}}<br>
+        </li>
+        
+</ul>
+            
+
+          
+<div class="col s12 m8 l6"> <!-- Note that "m8 l9" was added -->      
+</div>
